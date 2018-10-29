@@ -1,5 +1,5 @@
 <template>
-    <div>脚</div>
+  <div>脚</div>
 </template>
 
 <script>

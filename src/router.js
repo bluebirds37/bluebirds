@@ -2,8 +2,9 @@ import Vue from "vue";
 import Router from "vue-router";
 import ArticleEdit from "./views/article/ArticleEdit.vue";
 import ArticleShow from "./views/article/ArticleShow.vue";
-import HomeHeader from "./views/homeHeader/HomeHeader.vue";
-import HomeFooter from "./views/homeFooter/HomeFooter.vue";
+import HomeHeader from "./components/homeHeader/HomeHeader.vue";
+import HomeFooter from "./components/homeFooter/HomeFooter.vue";
+import HomeAside from "./components/homeAside/HomeAside.vue";
 
 Vue.use(Router);
 
@@ -28,6 +29,11 @@ export default new Router({
       path: "/homeFooter",
       name: "HomeFooter",
       component: HomeFooter
+    },
+    {
+      path: "/homeAside",
+      name: "HomeAside",
+      component: HomeAside
     }
   ]
 });
