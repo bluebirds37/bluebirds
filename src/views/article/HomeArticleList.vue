@@ -33,7 +33,7 @@ export default {
       alert(1);
     },
     tableRowClassName({ row, rowIndex }) {
-      console.info(row);
+      console.info(row);  
       if (rowIndex === 1) {
         return "warning-row";
       } else if (rowIndex === 3) {
