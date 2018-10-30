@@ -1,5 +1,14 @@
 <template>
-    <mavon-editor  v-model="markdown"  :subfield="false" :defaultOpen="defaultData" :toolbarsFlag="false" :boxShadow="false" @change="changeData" />
+  <div>
+    <mavon-editor
+      v-model="markdown"
+      :subfield="false"
+      :defaultOpen="defaultData"
+      :toolbarsFlag="false"
+      :boxShadow="false"
+      @change="changeData"
+    />
+  </div>
 </template>
 
 <script>

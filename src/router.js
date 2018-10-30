@@ -5,6 +5,7 @@ import ArticleShow from "./views/article/ArticleShow.vue";
 import HomeHeader from "./components/homeHeader/HomeHeader.vue";
 import HomeFooter from "./components/homeFooter/HomeFooter.vue";
 import HomeAside from "./components/homeAside/HomeAside.vue";
+import HomeArticleList from "./views/article/HomeArticleList.vue";
 
 Vue.use(Router);
 
@@ -34,6 +35,11 @@ export default new Router({
       path: "/homeAside",
       name: "HomeAside",
       component: HomeAside
+    },
+    {
+      path: "/homeArticleList",
+      name: "HomeArticleList",
+      component: HomeArticleList
     }
   ]
 });

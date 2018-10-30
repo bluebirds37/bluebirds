@@ -5,7 +5,7 @@
         <app-header></app-header>
       </el-header>
       <el-container>
-        <el-aside width="auto">
+        <el-aside height="auto" width="auto">
           <app-aside></app-aside>
         </el-aside>
         <el-main>

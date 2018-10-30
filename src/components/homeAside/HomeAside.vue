@@ -33,7 +33,9 @@
                 </el-menu-item>
                 <el-menu-item index="4">
                     <i class="el-icon-setting"></i>
-                    <span slot="title">导航四</span>
+                    <span slot="title">
+                         <router-link to="/HomeArticleList">HomeArticleList</router-link>
+                    </span>
                 </el-menu-item>
             </el-menu>
         </el-col>
