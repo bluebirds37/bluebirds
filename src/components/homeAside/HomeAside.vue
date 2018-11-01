@@ -34,7 +34,7 @@
                 <el-menu-item index="4">
                     <i class="el-icon-setting"></i>
                     <span slot="title">
-                         <router-link to="/HomeArticleList">HomeArticleList</router-link>
+                        <router-link to="/HomeArticleList">HomeArticleList</router-link>
                     </span>
                 </el-menu-item>
             </el-menu>
@@ -46,6 +46,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      search: "value"
+    };
+  },
   methods: {
     handleOpen(key, keyPath) {
       console.log(key, keyPath);

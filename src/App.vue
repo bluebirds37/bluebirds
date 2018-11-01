@@ -9,7 +9,7 @@
           <app-aside></app-aside>
         </el-aside>
         <el-main>
-          <router-view />
+          <router-view/>
         </el-main>
       </el-container>
       <el-footer>
@@ -22,12 +22,55 @@
 import AppHeader from "./components/homeHeader/HomeHeader.vue";
 import AppFooter from "./components/homeFooter/HomeFooter.vue";
 import AppAside from "./components/homeAside/HomeAside.vue";
+import axios from "axios";
 
 export default {
+  created() {
+    this.getUserInfo();
+
+    this.websocket();
+   
+  },
+  methods: {
+    getUserInfo() {
+      axios({
+        method: "get",
+        url: " http://localhost:8080/userInfo/findOne?id=89",
+        responseType: "stream"
+      }).then(function(response) {
+        console.info(response.data.data.id);
+      });
+    },
+    websocket() {
+      let ws = new WebSocket(
+        "ws://localhost:8080/websocket/socketServer.ws?userId=89"
+      );
+      ws.onopen = () => {
+        // Web Socket 已连接上，使用 send() 方法发送数据
+        ws.send("Holle");
+        console.log("数据发送中...");
+      };
+      ws.onmessage = evt => {
+       
+        console.log(evt.data);
+      };
+      ws.onclose = function() {
+        // 关闭 websocket
+        console.log("连接已关闭...");
+      };
+
+      // 组件销毁时调用，中断websocket链接
+      this.over = () => {
+        ws.close();
+      };
+    }
+  },
   data() {
     return {
       search: "",
-      collapseBtnClick: false
+      collapseBtnClick: false,
+      advices: {},
+      index: 0,
     };
   },
   components: {
